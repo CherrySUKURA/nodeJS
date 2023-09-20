@@ -1,0 +1,12 @@
+{
+    "name": "my-tools-wzh",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "这是自定义的工具包，具有格式化日期以及转义并还原HTML特殊字符串的功能",
+    "keywords": [
+        "wzh",
+        "tools",
+        "dateFormat"
+    ],
+    "license": "ISC"
+}
