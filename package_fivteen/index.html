@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnGet">Get</button>
+    <button id="btnPost">Post</button>
+    <button id="btnDelete">Delete</button>
+    <button id="btnJsonp">JSONP</button>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(function(){
+        $("#btnGet").on("click",() => {
+            $.ajax({
+                type: "get",
+                url: "http://127.0.0.1/api/get",
+                data: {name: "wzh",age: 20},
+                success(res){
+                    console.log(res)
+                }
+            })
+        })
+        $("#btnPost").on("click",() => {
+            var data = {
+                key: 'value'
+                };
+            $.ajax({
+                type: "post",
+                url: "http://127.0.0.1/api/post",
+                contentType: 'application/json', // 设置请求头为 application/json
+                data: JSON.stringify(data), // 不需要手动转换为 JSON 字符串
+                dataType: 'json', // 期望的响应数据类型为 JSON
+                success(res){
+                    console.log(res)
+                }
+            })
+        })
+
+        $("#btnDelete").on("click",() => {
+            $.ajax({
+                type: "delete",
+                url: "http://127.0.0.1/api/delete",
+                success(res){
+                    console.log(res)
+                }
+            })
+        })
+
+        $("#btnJsonp").on("click",() => {
+            $.ajax({
+                type: "get",
+                url: "http://127.0.0.1/api/jsonp",
+                dataType: 'jsonp',
+                success(res){
+                    console.log(res)
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
